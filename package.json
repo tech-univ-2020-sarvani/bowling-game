@@ -1,0 +1,27 @@
+{
+  "name": "bowling-game",
+  "version": "1.0.0",
+  "description": "Javascript code to evaluate score of bowling-game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tech-univ-2020-sarvani/bowling-game.git"
+  },
+  "keywords": [
+    "npm",
+    "node"
+  ],
+  "author": "Sarvani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tech-univ-2020-sarvani/bowling-game/issues"
+  },
+  "homepage": "https://github.com/tech-univ-2020-sarvani/bowling-game#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^24.9.0"
+  }
+}
