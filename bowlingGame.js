@@ -11,8 +11,17 @@ FrameScores = [];
 Frames = [];
 
 const bowlingGameScore = ((scores) => {
-    let frameLength = 20;
-    for(let i=0;i<frameLength-1; i++){
+    let frameLength;
+    if(scores.length == 21){
+        frameLength = scores.length-2;
+    }
+    else if(scores.length == 20){
+        frameLength = scores.length-1;
+    }
+    else{
+        frameLength = scores.length;
+    }
+    for(let i=0;i<frameLength; i++){
         if(scores[i] == 10){
             Frames.push(scores[i]+ scores[i+1]+ scores[i+2]);
         }
@@ -80,4 +89,4 @@ const score = ((Frames) => {
 
 module.exports = bowlingGameScore;
 module.exports = score;
-// console.log(bowlingGameScore([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]));
+console.log(bowlingGameScore([6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]));
