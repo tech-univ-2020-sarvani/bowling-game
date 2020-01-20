@@ -8,6 +8,16 @@ describe('The function bowlingGameScore', () => {
         const result = bowlingGameScore(scores);
         expect(result).toEqual(90);
     });
+    it('should return 10 plus the number of pins knocked down in their next throw for a spare', () => {
+        const scores = [6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        const result = bowlingGameScore(scores);
+        expect(result).toEqual(16);
+    });
+    it('should return 10 plus the number of pins knocked down in the next two throws for a strike', () => {
+        const scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10];;
+        const result = bowlingGameScore(scores);
+        expect(result).toEqual(30);
+    });
 });
 // describe('The function roll', () => {
 //     it('should call function strike, if the no.of throws is odd and no.of pins knocked down is 10', () => {

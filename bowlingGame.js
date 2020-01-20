@@ -1,6 +1,10 @@
 let throwCount = 0;
 FrameScores = [];
 
+const roll = ((throwScore) => {
+
+});
+
 // const frame = ((first=0, second = 0) => {
 //     const obj = {};
 //     this.firstRoll = first;
@@ -12,16 +16,16 @@ Frames = [];
 
 const bowlingGameScore = ((scores) => {
     let frameLength;
-    if(scores.length == 21){
-        frameLength = scores.length+2;
+    if(scores.length == 20){
+        frameLength = scores.length-1;
     }
-    else if(scores.length == 20){
-        frameLength = scores.length+1;
+    else if(scores.length == 21){
+        frameLength = scores.length-2;
     }
     else{
-        frameLength = scores.length;
+        frameLength = scores.length-2;
     }
-    for(let i=0;i<frameLength-2; i++){
+    for(let i=0;i<frameLength; i++){
         if(scores[i] == 10){
             Frames.push(scores[i]+ scores[i+1]+ scores[i+2]);
         }
@@ -34,6 +38,9 @@ const bowlingGameScore = ((scores) => {
             i = i+1;
         }
     }
+    // for(let i=0;i<Frames.length;i++){
+    //     console.log(Frames[i]);
+    // }
     // scores.forEach((throwScore) => {
     //     roll(throwScore);
     // });
@@ -87,6 +94,5 @@ const score = ((Frames) => {
     return totalScore;
 });
 
-module.exports = bowlingGameScore;
-module.exports = score;
-console.log(bowlingGameScore([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]));
+module.exports = {bowlingGameScore, score};
+console.log(bowlingGameScore([10,3,6,10,5,5,10,10,10,5,5,5,5,6,3]));
